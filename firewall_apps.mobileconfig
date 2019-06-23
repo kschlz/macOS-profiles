@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDisplayName</key>
+	<string>Enable Firewall</string>
+	<key>PayloadDescription</key>
+	<string>
+	> force enable the macOS application firewall
+	> keep firewall options editable
+	> profile cannot be removed without the removal password
+	</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>1764FDF2-B07C-407E-93D0-B2DCD538B9D7</string>
+	<key>PayloadOrganization</key>
+	<string>git.kevinschulze.com</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>1764FDF2-B07C-407E-93D0-B2DCD538B9D7</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadContent</key>
+	<array>
+		<!-- password protection to stop removal of manual installed profile -->
+		<dict>
+			<key>Description</key>
+			<string>Please enter the password to remove this profile.</string>
+			<key>PayloadType</key>
+			<string>com.apple.profileRemovalPassword</string>
+			<key>PayloadUUID</key>
+			<string>0ECE0541-C297-44FC-AABC-6856FC4DB211</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>RemovalPassword</key>
+			<string>YourPasswordHere!</string>
+		</dict>
+		<!-- firewall payload -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>macOS application firewall</string>
+			<key>EnableFirewall</key>
+			<true/>
+			<key>Applications</key>
+			<array>
+				<dict>
+					<key>Allowed</key>
+					<true/>
+					<key>BundleID</key>
+					<string>com.apple.RemoteDesktop</string>
+				</dict>
+			</array>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>6C7A95F6-133A-423C-87C0-023877FF946D</string>
+			<key>PayloadOrganization</key>
+			<string>git.kevinschulze.com</string>
+			<key>PayloadType</key>
+			<string>com.apple.security.firewall</string>
+			<key>PayloadUUID</key>
+			<string>6C7A95F6-133A-423C-87C0-023877FF946D</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
